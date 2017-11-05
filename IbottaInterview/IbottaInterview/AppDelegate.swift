@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //setup window and root view controller
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.white
         //begin with Offers page visible
         navigationController.pushViewController(OffersViewController(), animated: false)
         window?.rootViewController = navigationController
