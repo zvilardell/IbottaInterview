@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  OffersViewController.swift
 //  IbottaInterview
 //
 //  Created by Zach Vilardell on 11/5/17.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class OffersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        navigationItem.title = "Offers"
     }
 
     override func didReceiveMemoryWarning() {
