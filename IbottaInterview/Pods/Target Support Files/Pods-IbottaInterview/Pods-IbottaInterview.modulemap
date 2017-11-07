@@ -1,0 +1,6 @@
+framework module Pods_IbottaInterview {
+  umbrella header "Pods-IbottaInterview-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -14,9 +14,12 @@
 		B6AFB9C01FAFA6C200643DEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6AFB9BE1FAFA6C200643DEB /* LaunchScreen.storyboard */; };
 		B6AFB9C81FAFACFF00643DEB /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = B6AFB9C71FAFACFF00643DEB /* Offers.json */; };
 		B6AFB9CA1FB24E4600643DEB /* OffersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9C91FB24E4600643DEB /* OffersCollectionViewCell.swift */; };
+		FB5E22AA31F8DB0AF7D32219 /* Pods_IbottaInterview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C38167E3D0E9C9FB8AD2C06 /* Pods_IbottaInterview.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59BB4D843C92A146A3CA7B0C /* Pods-IbottaInterview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IbottaInterview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IbottaInterview/Pods-IbottaInterview.debug.xcconfig"; sourceTree = "<group>"; };
+		8C38167E3D0E9C9FB8AD2C06 /* Pods_IbottaInterview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IbottaInterview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6AFB9AF1FAFA6C200643DEB /* IbottaInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbottaInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6AFB9B21FAFA6C200643DEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6AFB9B41FAFA6C200643DEB /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		B6AFB9C11FAFA6C200643DEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6AFB9C71FAFACFF00643DEB /* Offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Offers.json; sourceTree = SOURCE_ROOT; };
 		B6AFB9C91FB24E4600643DEB /* OffersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCollectionViewCell.swift; sourceTree = "<group>"; };
+		BC67B854E9046FEF67C28E98 /* Pods-IbottaInterview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IbottaInterview.release.xcconfig"; path = "Pods/Target Support Files/Pods-IbottaInterview/Pods-IbottaInterview.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB5E22AA31F8DB0AF7D32219 /* Pods_IbottaInterview.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D545470BD60AF918D403D5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59BB4D843C92A146A3CA7B0C /* Pods-IbottaInterview.debug.xcconfig */,
+				BC67B854E9046FEF67C28E98 /* Pods-IbottaInterview.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B0E659403B9F6C0B15EFC06E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C38167E3D0E9C9FB8AD2C06 /* Pods_IbottaInterview.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B6AFB9A61FAFA6C200643DEB = {
 			isa = PBXGroup;
 			children = (
 				B6AFB9B11FAFA6C200643DEB /* IbottaInterview */,
 				B6AFB9B01FAFA6C200643DEB /* Products */,
+				2D545470BD60AF918D403D5C /* Pods */,
+				B0E659403B9F6C0B15EFC06E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6AFB9C41FAFA6C200643DEB /* Build configuration list for PBXNativeTarget "IbottaInterview" */;
 			buildPhases = (
+				D8EA94F00CFDEDDBB9B0F4F3 /* [CP] Check Pods Manifest.lock */,
 				B6AFB9AB1FAFA6C200643DEB /* Sources */,
 				B6AFB9AC1FAFA6C200643DEB /* Frameworks */,
 				B6AFB9AD1FAFA6C200643DEB /* Resources */,
+				F5B5C585D1ABCDCAD0F976F3 /* [CP] Embed Pods Frameworks */,
+				A4C3E885348CED8E16D01DD3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A4C3E885348CED8E16D01DD3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IbottaInterview/Pods-IbottaInterview-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8EA94F00CFDEDDBB9B0F4F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F5B5C585D1ABCDCAD0F976F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IbottaInterview/Pods-IbottaInterview-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B6AFB9AB1FAFA6C200643DEB /* Sources */ = {
@@ -272,6 +347,7 @@
 		};
 		B6AFB9C51FAFA6C200643DEB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59BB4D843C92A146A3CA7B0C /* Pods-IbottaInterview.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +363,7 @@
 		};
 		B6AFB9C61FAFA6C200643DEB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC67B854E9046FEF67C28E98 /* Pods-IbottaInterview.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
