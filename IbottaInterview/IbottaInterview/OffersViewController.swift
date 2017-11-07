@@ -12,15 +12,19 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     var offersCollectionView: UICollectionView!
     let cellReuseID = "OffersCollectionViewCell"
+    
+    var offers: [Offer] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //set nav bar title
         navigationItem.title = "Offers"
+        
+        //retrieve data for display
+        getOfferData()
+        
         //setup collection view
         setupSubviews()
-        //retrieve offer data for display
-        getOfferData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,17 +35,19 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
     func setupSubviews() {
         offersCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         offersCollectionView.backgroundColor = UIColor.white
+        offersCollectionView.register(OffersCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseID)
         offersCollectionView.delegate = self
         offersCollectionView.dataSource = self
-        offersCollectionView.register(OffersCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseID)
         view.addSubview(offersCollectionView)
         setupConstraints()
     }
     
     func setupConstraints() {
         offersCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        
         let safeArea = view.safeAreaLayoutGuide
         let sideMarginSpacing: CGFloat = 12.0
+        
         NSLayoutConstraint.activate([
             offersCollectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: sideMarginSpacing),
             offersCollectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -sideMarginSpacing),
@@ -51,13 +57,36 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func getOfferData() {
-        
+        //read in offers data from json file
+        if let fileURL = Bundle.main.url(forResource: "Offers", withExtension: "json") {
+            do {
+                let rawData = try Data(contentsOf: fileURL)
+                let jsonData = try JSONSerialization.jsonObject(with: rawData, options: []) as! [NSDictionary]
+                
+                //create an Offer object from each json item, map to data array
+                offers = jsonData.map { dataDict in
+                    return Offer(properties: dataDict)
+                }
+                
+                for offer in offers {
+                    print(offer.id)
+                    print(offer.name)
+                    print(offer.offerDescription)
+                    print(offer.value)
+                    print(offer.terms)
+                    print(offer.imageURL)
+                    print()
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
     
     // MARK: UICollectionView DataSource/Delegate/DelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return offers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

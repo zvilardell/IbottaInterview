@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B63084B91FB2676900F698BC /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084B81FB2676900F698BC /* Offer.swift */; };
 		B6AFB9B31FAFA6C200643DEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B21FAFA6C200643DEB /* AppDelegate.swift */; };
 		B6AFB9B51FAFA6C200643DEB /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B41FAFA6C200643DEB /* OffersViewController.swift */; };
 		B6AFB9BB1FAFA6C200643DEB /* IbottaInterview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B91FAFA6C200643DEB /* IbottaInterview.xcdatamodeld */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		59BB4D843C92A146A3CA7B0C /* Pods-IbottaInterview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IbottaInterview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IbottaInterview/Pods-IbottaInterview.debug.xcconfig"; sourceTree = "<group>"; };
 		8C38167E3D0E9C9FB8AD2C06 /* Pods_IbottaInterview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IbottaInterview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B63084B81FB2676900F698BC /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		B6AFB9AF1FAFA6C200643DEB /* IbottaInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbottaInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6AFB9B21FAFA6C200643DEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6AFB9B41FAFA6C200643DEB /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				B6AFB9C71FAFACFF00643DEB /* Offers.json */,
 				B6AFB9B91FAFA6C200643DEB /* IbottaInterview.xcdatamodeld */,
 				B6AFB9C91FB24E4600643DEB /* OffersCollectionViewCell.swift */,
+				B63084B81FB2676900F698BC /* Offer.swift */,
 			);
 			path = IbottaInterview;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				B6AFB9CA1FB24E4600643DEB /* OffersCollectionViewCell.swift in Sources */,
 				B6AFB9B51FAFA6C200643DEB /* OffersViewController.swift in Sources */,
 				B6AFB9B31FAFA6C200643DEB /* AppDelegate.swift in Sources */,
+				B63084B91FB2676900F698BC /* Offer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
