@@ -19,7 +19,9 @@ class OfferDetailsViewController: UIViewController {
     var descriptionLabel: UILabel!
     var valueLabel: UILabel!
     var termsTextView: UITextView!
-    var favoriteButton: UIButton!
+    var favoriteButton: UIControl!
+    var favoriteLabel: UILabel!
+    var favoriteImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,8 @@ class OfferDetailsViewController: UIViewController {
     func setupSubviews() {
         //image view
         productImageView = UIImageView()
-        productImageView.backgroundColor = UIColor.cyan
+//        productImageView.layer.cornerRadius = 5.0
+//        productImageView.backgroundColor = UIColor.fromHex(string: "#EEEEEE")
         productImageView.contentMode = .scaleAspectFit
         if let url = URL(string: offer.imageURL) {
         	productImageView.sd_setImage(with: url, completed: nil)
@@ -70,6 +73,22 @@ class OfferDetailsViewController: UIViewController {
         descriptionLabel.text = offer.offerDescription + "hello hello hello hello"
         view.addSubview(descriptionLabel)
         
+        //favorite button
+        favoriteButton = UIControl()
+        favoriteButton.layer.cornerRadius = 5.0
+        favoriteButton.backgroundColor = offer.favorited ? UIColor.green : UIColor.fromHex(string: "#EEEEEE")
+        favoriteLabel = UILabel()
+        favoriteLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 18.0)
+        favoriteLabel.textColor = offer.favorited ? UIColor.white : UIColor.fromHex(string: "#4A4A4A")
+        favoriteLabel.text = offer.favorited ? "Favorited" : "Favorite This"
+        favoriteButton.addSubview(favoriteLabel)
+        favoriteImageView = UIImageView()
+        favoriteImageView.contentMode = .scaleAspectFit
+        favoriteImageView.image = UIImage(named: "check")
+        favoriteImageView.tintColor = offer.favorited ? UIColor.white : UIColor.fromHex(string: "#4A4A4A")
+        favoriteButton.addSubview(favoriteImageView)
+        view.addSubview(favoriteButton)
+        
         setupConstraints()
     }
     
@@ -78,6 +97,9 @@ class OfferDetailsViewController: UIViewController {
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        favoriteButton.translatesAutoresizingMaskIntoConstraints = false
+        favoriteLabel.translatesAutoresizingMaskIntoConstraints = false
+        favoriteImageView.translatesAutoresizingMaskIntoConstraints = false
         
         let safeArea = view.safeAreaLayoutGuide
         
@@ -99,6 +121,17 @@ class OfferDetailsViewController: UIViewController {
             descriptionLabel.leftAnchor.constraint(equalTo: valueLabel.leftAnchor),
             descriptionLabel.rightAnchor.constraint(equalTo: valueLabel.rightAnchor),
             descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 3.0),
+            //favorite button
+            favoriteButton.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
+            favoriteButton.widthAnchor.constraint(equalTo: safeArea.widthAnchor, multiplier: 0.66),
+            favoriteButton.heightAnchor.constraint(equalToConstant: 60.0),
+            favoriteButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -10.0),
+            favoriteLabel.centerXAnchor.constraint(equalTo: favoriteButton.centerXAnchor, constant: -15.0),
+            favoriteLabel.centerYAnchor.constraint(equalTo: favoriteButton.centerYAnchor),
+            favoriteImageView.centerYAnchor.constraint(equalTo: favoriteButton.centerYAnchor),
+            favoriteImageView.leftAnchor.constraint(equalTo: favoriteLabel.rightAnchor, constant: 5.0),
+            favoriteImageView.widthAnchor.constraint(equalToConstant: 30.0),
+            favoriteImageView.heightAnchor.constraint(equalTo: favoriteImageView.widthAnchor)
         ])
     }
 
