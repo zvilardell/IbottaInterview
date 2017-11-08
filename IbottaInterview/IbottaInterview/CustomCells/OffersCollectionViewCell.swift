@@ -11,6 +11,7 @@ import SDWebImage
 
 class OffersCollectionViewCell: UICollectionViewCell {
     
+    //subviews
     var greyView: UIView!
     var productImageView: UIImageView!
     var valueLabel: UILabel!
