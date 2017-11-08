@@ -99,6 +99,13 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //navigate to details screen for selected offer
+        let detailsVC = OfferDetailsViewController()
+        detailsVC.offer = offers[indexPath.item]
+        navigationController?.pushViewController(detailsVC, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //cellWidth is half the width of the collectionview minus half the collectionview's interitem spacing
         let cellWidth = floor(collectionView.bounds.width / 2.0) - floor(interitemSpacing / 2.0)

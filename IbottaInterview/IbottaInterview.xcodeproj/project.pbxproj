@@ -10,6 +10,7 @@
 		B63084B91FB2676900F698BC /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084B81FB2676900F698BC /* Offer.swift */; };
 		B63084BF1FB26FEE00F698BC /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = B63084BE1FB26FEE00F698BC /* Offers.json */; };
 		B63084C21FB2937600F698BC /* UIColor+FromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084C11FB2937600F698BC /* UIColor+FromHex.swift */; };
+		B63084C51FB39F6C00F698BC /* OfferDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084C41FB39F6C00F698BC /* OfferDetailsViewController.swift */; };
 		B6AFB9B31FAFA6C200643DEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B21FAFA6C200643DEB /* AppDelegate.swift */; };
 		B6AFB9B51FAFA6C200643DEB /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B41FAFA6C200643DEB /* OffersViewController.swift */; };
 		B6AFB9BB1FAFA6C200643DEB /* IbottaInterview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B91FAFA6C200643DEB /* IbottaInterview.xcdatamodeld */; };
@@ -25,6 +26,7 @@
 		B63084B81FB2676900F698BC /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		B63084BE1FB26FEE00F698BC /* Offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Offers.json; sourceTree = "<group>"; };
 		B63084C11FB2937600F698BC /* UIColor+FromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+FromHex.swift"; sourceTree = "<group>"; };
+		B63084C41FB39F6C00F698BC /* OfferDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailsViewController.swift; sourceTree = "<group>"; };
 		B6AFB9AF1FAFA6C200643DEB /* IbottaInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbottaInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6AFB9B21FAFA6C200643DEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6AFB9B41FAFA6C200643DEB /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				B6AFB9B41FAFA6C200643DEB /* OffersViewController.swift */,
+				B63084C41FB39F6C00F698BC /* OfferDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -106,6 +109,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		B63084C31FB39ADF00F698BC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B63084C11FB2937600F698BC /* UIColor+FromHex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B6AFB9A61FAFA6C200643DEB = {
 			isa = PBXGroup;
 			children = (
@@ -133,9 +144,9 @@
 				B63084BA1FB26F2900F698BC /* ViewControllers */,
 				B63084BB1FB26F3800F698BC /* CustomCells */,
 				B63084BC1FB26F4E00F698BC /* DataModels */,
+				B63084C31FB39ADF00F698BC /* Extensions */,
 				B63084BD1FB26F7500F698BC /* Utilities */,
 				B63084C01FB2707100F698BC /* Storyboards */,
-				B63084C11FB2937600F698BC /* UIColor+FromHex.swift */,
 			);
 			path = IbottaInterview;
 			sourceTree = "<group>";
@@ -267,6 +278,7 @@
 				B6AFB9CA1FB24E4600643DEB /* OffersCollectionViewCell.swift in Sources */,
 				B6AFB9B51FAFA6C200643DEB /* OffersViewController.swift in Sources */,
 				B6AFB9B31FAFA6C200643DEB /* AppDelegate.swift in Sources */,
+				B63084C51FB39F6C00F698BC /* OfferDetailsViewController.swift in Sources */,
 				B63084B91FB2676900F698BC /* Offer.swift in Sources */,
 				B63084C21FB2937600F698BC /* UIColor+FromHex.swift in Sources */,
 			);
