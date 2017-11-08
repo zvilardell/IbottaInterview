@@ -37,8 +37,6 @@ class OfferDetailsViewController: UIViewController {
     func setupSubviews() {
         //image view
         productImageView = UIImageView()
-//        productImageView.layer.cornerRadius = 5.0
-//        productImageView.backgroundColor = UIColor.fromHex(string: "#EEEEEE")
         productImageView.contentMode = .scaleAspectFit
         if let url = URL(string: offer.imageURL) {
         	productImageView.sd_setImage(with: url, completed: nil)
@@ -89,6 +87,14 @@ class OfferDetailsViewController: UIViewController {
         favoriteButton.addSubview(favoriteImageView)
         view.addSubview(favoriteButton)
         
+        //terms text view
+        termsTextView = UITextView()
+        termsTextView.backgroundColor = UIColor.yellow
+        termsTextView.font = UIFont(name: "AvenirNext-Regular", size: 16.0)
+        termsTextView.textColor = UIColor.fromHex(string: "#4A4A4A")
+        termsTextView.text = offer.terms
+        view.addSubview(termsTextView)
+        
         setupConstraints()
     }
     
@@ -100,6 +106,7 @@ class OfferDetailsViewController: UIViewController {
         favoriteButton.translatesAutoresizingMaskIntoConstraints = false
         favoriteLabel.translatesAutoresizingMaskIntoConstraints = false
         favoriteImageView.translatesAutoresizingMaskIntoConstraints = false
+        termsTextView.translatesAutoresizingMaskIntoConstraints = false
         
         let safeArea = view.safeAreaLayoutGuide
         
@@ -131,7 +138,9 @@ class OfferDetailsViewController: UIViewController {
             favoriteImageView.centerYAnchor.constraint(equalTo: favoriteButton.centerYAnchor),
             favoriteImageView.leftAnchor.constraint(equalTo: favoriteLabel.rightAnchor, constant: 5.0),
             favoriteImageView.widthAnchor.constraint(equalToConstant: 30.0),
-            favoriteImageView.heightAnchor.constraint(equalTo: favoriteImageView.widthAnchor)
+            favoriteImageView.heightAnchor.constraint(equalTo: favoriteImageView.widthAnchor),
+            //terms text view
+            
         ])
     }
 
