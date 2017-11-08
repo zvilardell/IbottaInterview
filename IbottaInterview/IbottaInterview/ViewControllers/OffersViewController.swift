@@ -29,7 +29,6 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         //setup collection view
         setupSubviews()
-        
     }
 
     override func didReceiveMemoryWarning() {

@@ -42,7 +42,7 @@ class OffersCollectionViewCell: UICollectionViewCell {
     func setupSubviews() {
         //grey view
         greyView = UIView()
-        greyView.backgroundColor = UIColor.lightGray
+        greyView.backgroundColor = UIColor.fromHex(string: "#EEEEEE")
         greyView.layer.cornerRadius = 5.0
         contentView.addSubview(greyView)
         
@@ -54,13 +54,13 @@ class OffersCollectionViewCell: UICollectionViewCell {
         //name label
         nameLabel = UILabel()
         nameLabel.font = UIFont(name: "AvenirNext-Regular", size: 11.0)
-        nameLabel.text = "Product Name"
+        nameLabel.textColor = UIColor.fromHex(string: "#4A4A4A")
         contentView.addSubview(nameLabel)
         
         //value label
         valueLabel = UILabel()
         valueLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 12.0)
-        valueLabel.text = "Cash Back Value"
+        valueLabel.textColor = UIColor.fromHex(string: "#4A4A4A")
         contentView.addSubview(valueLabel)
         
         setupConstraints()

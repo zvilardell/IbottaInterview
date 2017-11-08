@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B63084B91FB2676900F698BC /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084B81FB2676900F698BC /* Offer.swift */; };
 		B63084BF1FB26FEE00F698BC /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = B63084BE1FB26FEE00F698BC /* Offers.json */; };
+		B63084C21FB2937600F698BC /* UIColor+FromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084C11FB2937600F698BC /* UIColor+FromHex.swift */; };
 		B6AFB9B31FAFA6C200643DEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B21FAFA6C200643DEB /* AppDelegate.swift */; };
 		B6AFB9B51FAFA6C200643DEB /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B41FAFA6C200643DEB /* OffersViewController.swift */; };
 		B6AFB9BB1FAFA6C200643DEB /* IbottaInterview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B91FAFA6C200643DEB /* IbottaInterview.xcdatamodeld */; };
@@ -23,6 +24,7 @@
 		8C38167E3D0E9C9FB8AD2C06 /* Pods_IbottaInterview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IbottaInterview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63084B81FB2676900F698BC /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		B63084BE1FB26FEE00F698BC /* Offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Offers.json; sourceTree = "<group>"; };
+		B63084C11FB2937600F698BC /* UIColor+FromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+FromHex.swift"; sourceTree = "<group>"; };
 		B6AFB9AF1FAFA6C200643DEB /* IbottaInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbottaInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6AFB9B21FAFA6C200643DEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6AFB9B41FAFA6C200643DEB /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				B63084BC1FB26F4E00F698BC /* DataModels */,
 				B63084BD1FB26F7500F698BC /* Utilities */,
 				B63084C01FB2707100F698BC /* Storyboards */,
+				B63084C11FB2937600F698BC /* UIColor+FromHex.swift */,
 			);
 			path = IbottaInterview;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				B6AFB9B51FAFA6C200643DEB /* OffersViewController.swift in Sources */,
 				B6AFB9B31FAFA6C200643DEB /* AppDelegate.swift in Sources */,
 				B63084B91FB2676900F698BC /* Offer.swift in Sources */,
+				B63084C21FB2937600F698BC /* UIColor+FromHex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
