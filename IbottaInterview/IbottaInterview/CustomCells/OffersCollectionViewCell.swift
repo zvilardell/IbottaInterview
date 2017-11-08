@@ -18,11 +18,25 @@ class OffersCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        //create and constrain cell's subviews
         setupSubviews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func configure(offer: Offer) {
+        //configure cell elements from passed in offer
+        nameLabel.text = offer.name
+        valueLabel.text = offer.value
+        if let url = URL(string: offer.imageURL) {
+            //load image asynchronously from url
+        	productImageView.sd_setImage(with: url, completed: nil)
+        } else {
+            //no image
+            productImageView.image = nil
+        }
     }
     
     func setupSubviews() {
@@ -34,20 +48,17 @@ class OffersCollectionViewCell: UICollectionViewCell {
         
         //product image view
         productImageView = UIImageView()
-        productImageView.backgroundColor = UIColor.cyan
         productImageView.contentMode = .scaleAspectFit
         greyView.addSubview(productImageView)
         
         //name label
         nameLabel = UILabel()
-        nameLabel.backgroundColor = UIColor.magenta
         nameLabel.font = UIFont(name: "AvenirNext-Regular", size: 11.0)
         nameLabel.text = "Product Name"
         contentView.addSubview(nameLabel)
         
         //value label
         valueLabel = UILabel()
-        valueLabel.backgroundColor = UIColor.yellow
         valueLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 12.0)
         valueLabel.text = "Cash Back Value"
         contentView.addSubview(valueLabel)
@@ -74,9 +85,11 @@ class OffersCollectionViewCell: UICollectionViewCell {
             productImageView.bottomAnchor.constraint(equalTo: greyView.bottomAnchor, constant: -6.0),
             //name label
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             //value label
             valueLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            valueLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             valueLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -3.0)
         ])
     }

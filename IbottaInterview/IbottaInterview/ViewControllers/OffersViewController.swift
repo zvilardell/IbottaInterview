@@ -10,9 +10,14 @@ import UIKit
 
 class OffersViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    //collection view
     var offersCollectionView: UICollectionView!
     let cellReuseID = "OffersCollectionViewCell"
+    let sideMarginSpacing: CGFloat = 12.0 //12 points spacing on sides of collection view
+    let interitemSpacing: CGFloat = 8.0 //minimum of 8 points spacing between row items in the collectionview
+    let lineSpacing: CGFloat = 24.0 //minimum of 24 points spacing between rows in the collectionview
     
+    //data array for offers to display in collection view
     var offers: [Offer] = []
 
     override func viewDidLoad() {
@@ -46,12 +51,11 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
         offersCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         let safeArea = view.safeAreaLayoutGuide
-        let sideMarginSpacing: CGFloat = 12.0
         
         NSLayoutConstraint.activate([
             offersCollectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: sideMarginSpacing),
             offersCollectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -sideMarginSpacing),
-            offersCollectionView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            offersCollectionView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: lineSpacing),
             offersCollectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
         ])
     }
@@ -83,7 +87,7 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
     }
     
-    // MARK: UICollectionView DataSource/Delegate/DelegateFlowLayout
+    // MARK: UICollectionView DataSource/DelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return offers.count
@@ -92,24 +96,22 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //prepare offer cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseID, for: indexPath) as! OffersCollectionViewCell
-        cell.backgroundColor = UIColor.black
+        cell.configure(offer: offers[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //cellWidth is half the width of the collectionview minus half the collectionview's interitem spacing (8/2 = 4)
-        let cellWidth = floor(collectionView.bounds.width / 2.0) - 4.0
+        //cellWidth is half the width of the collectionview minus half the collectionview's interitem spacing
+        let cellWidth = floor(collectionView.bounds.width / 2.0) - floor(interitemSpacing / 2.0)
         return CGSize(width: cellWidth, height: cellWidth)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        //minimum of 8 points spacing between row items in the collectionview
-        return 8.0
+        return interitemSpacing
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        //minimum of 24 points spacing between rows in the collectionview
-        return 24.0
+        return lineSpacing
     }
 }
 
