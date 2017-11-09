@@ -32,6 +32,7 @@ class OfferDetailsViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         //ensure that termsTextView begins with its content scrolled to top
         termsTextView.setContentOffset(.zero, animated: false)
     }
