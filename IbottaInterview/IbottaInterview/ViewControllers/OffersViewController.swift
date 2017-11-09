@@ -16,9 +16,6 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
     let sideMarginSpacing: CGFloat = 12.0 //12 points spacing on sides of collection view
     let interitemSpacing: CGFloat = 8.0 //minimum of 8 points spacing between row items in the collectionview
     let lineSpacing: CGFloat = 24.0 //minimum of 24 points spacing between rows in the collectionview
-    
-    //data array for offers to display in collection view
-    var offers: [Offer] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,50 +56,28 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
         ])
     }
     
+    //wrapper for data store load function
     func getOfferData() {
-        //read in offers data from json file
-        if let fileURL = Bundle.main.url(forResource: "Offers", withExtension: "json") {
-            do {
-                let rawData = try Data(contentsOf: fileURL)
-                let jsonData = try JSONSerialization.jsonObject(with: rawData, options: []) as! [NSDictionary]
-                
-                //create an Offer object from each json item, map to data array
-                offers = jsonData.map { dataDict in
-                    return Offer(properties: dataDict)
-                }
-                
-                for offer in offers {
-                    print(offer.id)
-                    print(offer.name)
-                    print(offer.offerDescription)
-                    print(offer.value)
-                    print(offer.terms)
-                    print(offer.imageURL)
-                    print()
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
+        DataStore.sharedInstance.loadOffers()
     }
     
     // MARK: UICollectionView DataSource/DelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return offers.count
+        return DataStore.sharedInstance.offers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //prepare offer cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseID, for: indexPath) as! OffersCollectionViewCell
-        cell.configure(offer: offers[indexPath.item])
+        cell.configure(offer: DataStore.sharedInstance.offers[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //navigate to details screen for selected offer
         let detailsVC = OfferDetailsViewController()
-        detailsVC.offer = offers[indexPath.item]
+        detailsVC.offer = DataStore.sharedInstance.offers[indexPath.item]
         navigationController?.pushViewController(detailsVC, animated: true)
     }
     
