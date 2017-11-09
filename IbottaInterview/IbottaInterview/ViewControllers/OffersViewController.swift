@@ -62,8 +62,9 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
         ])
     }
     
-    //wrapper for data store load function
+    //wrapper for DataStore load function calls
     func getOfferData() {
+        DataStore.sharedInstance.loadFavoritedOfferIDs()
         DataStore.sharedInstance.loadOffers()
     }
     

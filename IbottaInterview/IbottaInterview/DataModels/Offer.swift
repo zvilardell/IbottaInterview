@@ -22,6 +22,7 @@ class Offer: NSObject {
         //build offer object from passed in property dictionary
         if let id = properties["id"] as? String {
             self.id = id
+            self.favorited = DataStore.sharedInstance.favoritedOfferIDs.contains(id)
         }
         if let name = properties["name"] as? String {
             self.name = name

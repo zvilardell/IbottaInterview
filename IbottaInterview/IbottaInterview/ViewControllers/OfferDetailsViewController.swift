@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class OfferDetailsViewController: UIViewController {
     
@@ -151,11 +152,13 @@ class OfferDetailsViewController: UIViewController {
         //toggle offer's favorited state
         offer.favorited = !offer.favorited
         
-        //add or remove offer id from DataStore set
+        //add or remove offer id from DataStore and CoreData
         if offer.favorited {
             DataStore.sharedInstance.favoritedOfferIDs.insert(offer.id)
+            DataStore.sharedInstance.saveFavoritedOfferID(offerID: offer.id)
         } else {
             DataStore.sharedInstance.favoritedOfferIDs.remove(offer.id)
+            DataStore.sharedInstance.deleteFavoritedOfferID(offerID: offer.id)
         }
         
         //adjust UI to reflect favorited state

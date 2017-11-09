@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DataStore: NSObject {
     
@@ -49,6 +50,47 @@ class DataStore: NSObject {
             } catch {
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    //retrieve favorited offer id's from disk via CoreData
+    func loadFavoritedOfferIDs() {
+        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoritedOffer")
+        do {
+            if let favoritedOffers = try managedObjectContext.fetch(fetchRequest) as? [FavoritedOffer] {
+                favoritedOfferIDs = Set<String>.init(favoritedOffers.map {$0.id!})
+            }
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
+    }
+    
+    //save favorited offer id to disk via CoreData
+    func saveFavoritedOfferID(offerID: String) {
+        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "FavoritedOffer", in: managedObjectContext)!
+        let favoritedOffer = NSManagedObject(entity: entity, insertInto: managedObjectContext)
+        favoritedOffer.setValue(offerID, forKey: "id")
+        do {
+            try managedObjectContext.save()
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
+    }
+    
+    //delete favorited offer id from disk via CoreData
+    func deleteFavoritedOfferID(offerID: String) {
+        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoritedOffer")
+        fetchRequest.predicate = NSPredicate(format: "id==\(offerID)", argumentArray: nil)
+        do {
+            if let favoritedOffers = try? managedObjectContext.fetch(fetchRequest), let favoritedOffer = favoritedOffers.first {
+                managedObjectContext.delete(favoritedOffer)
+                try managedObjectContext.save()
+            }
+        } catch let error as NSError {
+            print(error.debugDescription)
         }
     }
 }
