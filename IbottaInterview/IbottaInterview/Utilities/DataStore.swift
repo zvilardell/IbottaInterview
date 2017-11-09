@@ -37,16 +37,6 @@ class DataStore: NSObject {
                 offers = jsonData.map { dataDict in
                     return Offer(properties: dataDict)
                 }
-                
-                for offer in offers {
-                    print(offer.id)
-                    print(offer.name)
-                    print(offer.offerDescription)
-                    print(offer.value)
-                    print(offer.terms)
-                    print(offer.imageURL)
-                    print()
-                }
             } catch {
                 print(error.localizedDescription)
             }

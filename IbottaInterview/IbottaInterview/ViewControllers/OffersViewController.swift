@@ -20,6 +20,7 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Offers"
+        view.backgroundColor = UIColor.white
         
         //retrieve data for display
         getOfferData()

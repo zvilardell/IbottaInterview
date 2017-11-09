@@ -13,15 +13,14 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let navigationController = UINavigationController()
-
+    var navigationController: UINavigationController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //setup window and root view controller
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        //begin with Offers page visible
-        navigationController.pushViewController(OffersViewController(), animated: false)
+        //begin with OffersViewController visible
+        navigationController = UINavigationController(rootViewController: OffersViewController())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true
