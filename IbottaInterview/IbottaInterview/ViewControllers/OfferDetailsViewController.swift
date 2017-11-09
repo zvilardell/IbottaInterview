@@ -150,6 +150,14 @@ class OfferDetailsViewController: UIViewController {
     @objc func favoriteButtonTapped() {
         //toggle offer's favorited state
         offer.favorited = !offer.favorited
+        
+        //add or remove offer id from DataStore set
+        if offer.favorited {
+            DataStore.sharedInstance.favoritedOfferIDs.insert(offer.id)
+        } else {
+            DataStore.sharedInstance.favoritedOfferIDs.remove(offer.id)
+        }
+        
         //adjust UI to reflect favorited state
         favoriteButton.backgroundColor = offer.favorited ? UIColor.green : UIColor.fromHex(string: "#EEEEEE")
         favoriteLabel.textColor = offer.favorited ? UIColor.white : UIColor.fromHex(string: "#4A4A4A")

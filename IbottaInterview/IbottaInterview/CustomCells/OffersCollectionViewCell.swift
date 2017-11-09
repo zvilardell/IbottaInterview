@@ -16,6 +16,7 @@ class OffersCollectionViewCell: UICollectionViewCell {
     var productImageView: UIImageView!
     var valueLabel: UILabel!
     var nameLabel: UILabel!
+    var favoritedImageView: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,6 +32,7 @@ class OffersCollectionViewCell: UICollectionViewCell {
         //configure cell elements from passed in offer
         nameLabel.text = offer.name
         valueLabel.text = offer.value
+        favoritedImageView.isHidden = DataStore.sharedInstance.favoritedOfferIDs.contains(offer.id) ? false : true
         if let url = URL(string: offer.imageURL) {
             //load image asynchronously from url
         	productImageView.sd_setImage(with: url, completed: nil)
@@ -64,6 +66,13 @@ class OffersCollectionViewCell: UICollectionViewCell {
         valueLabel.textColor = UIColor.fromHex(string: "#4A4A4A")
         contentView.addSubview(valueLabel)
         
+        //favorited image view
+        favoritedImageView = UIImageView()
+        favoritedImageView.contentMode = .scaleAspectFit
+        favoritedImageView.tintColor = UIColor.green
+        favoritedImageView.image = UIImage(named: "check")
+        contentView.addSubview(favoritedImageView)
+        
         setupConstraints()
     }
     
@@ -72,6 +81,7 @@ class OffersCollectionViewCell: UICollectionViewCell {
         productImageView.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        favoritedImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             //grey view
@@ -91,7 +101,12 @@ class OffersCollectionViewCell: UICollectionViewCell {
             //value label
             valueLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             valueLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            valueLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -3.0)
+            valueLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -3.0),
+            //favorited image view
+            favoritedImageView.centerYAnchor.constraint(equalTo: valueLabel.centerYAnchor),
+            favoritedImageView.heightAnchor.constraint(equalTo: valueLabel.heightAnchor),
+            favoritedImageView.widthAnchor.constraint(equalTo: favoritedImageView.heightAnchor),
+            favoritedImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5.0)
         ])
     }
     

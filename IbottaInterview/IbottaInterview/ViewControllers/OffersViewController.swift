@@ -27,6 +27,12 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
         //setup collection view
         setupSubviews()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //reload data on viewWillAppear to reflect favorited offers set from details screen
+        offersCollectionView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
