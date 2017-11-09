@@ -50,7 +50,7 @@ class OfferDetailsViewController: UIViewController {
         //value label
         valueLabel = UILabel()
         valueLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 18.0)
-        valueLabel.textColor = UIColor.fromHex(string: "#4A4A4A")
+        valueLabel.textColor = AppColors.textGrey
         valueLabel.text = offer.value
         view.addSubview(valueLabel)
         
@@ -58,7 +58,7 @@ class OfferDetailsViewController: UIViewController {
         nameLabel = UILabel()
         nameLabel.numberOfLines = 2
         nameLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 16.0)
-        nameLabel.textColor = UIColor.fromHex(string: "#4A4A4A")
+        nameLabel.textColor = AppColors.textGrey
         nameLabel.text = offer.name
         view.addSubview(nameLabel)
         
@@ -66,7 +66,7 @@ class OfferDetailsViewController: UIViewController {
         descriptionLabel = UILabel()
         descriptionLabel.numberOfLines = 2
         descriptionLabel.font = UIFont(name: "AvenirNext-Regular", size: 16.0)
-        descriptionLabel.textColor = UIColor.fromHex(string: "#4A4A4A")
+        descriptionLabel.textColor = AppColors.textGrey
         descriptionLabel.text = offer.offerDescription
         view.addSubview(descriptionLabel)
         
@@ -74,16 +74,16 @@ class OfferDetailsViewController: UIViewController {
         favoriteButton = UIControl()
         favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: UIControlEvents.touchUpInside)
         favoriteButton.layer.cornerRadius = 5.0
-        favoriteButton.backgroundColor = offer.favorited ? UIColor.green : UIColor.fromHex(string: "#EEEEEE")
+        favoriteButton.backgroundColor = offer.favorited ? UIColor.green : AppColors.lightGrey
         favoriteLabel = UILabel()
         favoriteLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 18.0)
-        favoriteLabel.textColor = offer.favorited ? UIColor.white : UIColor.fromHex(string: "#4A4A4A")
+        favoriteLabel.textColor = offer.favorited ? UIColor.white : AppColors.textGrey
         favoriteLabel.text = offer.favorited ? "Favorited" : "Favorite This"
         favoriteButton.addSubview(favoriteLabel)
         favoriteImageView = UIImageView()
         favoriteImageView.contentMode = .scaleAspectFit
         favoriteImageView.image = UIImage(named: "check")
-        favoriteImageView.tintColor = offer.favorited ? UIColor.white : UIColor.fromHex(string: "#4A4A4A")
+        favoriteImageView.tintColor = offer.favorited ? UIColor.white : AppColors.textGrey
         favoriteButton.addSubview(favoriteImageView)
         view.addSubview(favoriteButton)
         
@@ -93,7 +93,7 @@ class OfferDetailsViewController: UIViewController {
         termsTextView.textContainerInset = UIEdgeInsets.zero
         termsTextView.contentInset = UIEdgeInsets.zero
         termsTextView.font = UIFont(name: "AvenirNext-Regular", size: 16.0)
-        termsTextView.textColor = UIColor.fromHex(string: "#4A4A4A")
+        termsTextView.textColor = AppColors.textGrey
         termsTextView.text = offer.terms
         view.addSubview(termsTextView)
         
@@ -163,10 +163,10 @@ class OfferDetailsViewController: UIViewController {
         }
         
         //adjust UI to reflect favorited state
-        favoriteButton.backgroundColor = offer.favorited ? UIColor.green : UIColor.fromHex(string: "#EEEEEE")
-        favoriteLabel.textColor = offer.favorited ? UIColor.white : UIColor.fromHex(string: "#4A4A4A")
+        favoriteButton.backgroundColor = offer.favorited ? UIColor.green : AppColors.lightGrey
+        favoriteLabel.textColor = offer.favorited ? UIColor.white : AppColors.textGrey
         favoriteLabel.text = offer.favorited ? "Favorited" : "Favorite This"
-        favoriteImageView.tintColor = offer.favorited ? UIColor.white : UIColor.fromHex(string: "#4A4A4A")
+        favoriteImageView.tintColor = offer.favorited ? UIColor.white : AppColors.textGrey
     }
 
 }

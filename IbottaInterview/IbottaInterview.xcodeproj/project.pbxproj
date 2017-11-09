@@ -12,6 +12,7 @@
 		B63084C21FB2937600F698BC /* UIColor+FromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084C11FB2937600F698BC /* UIColor+FromHex.swift */; };
 		B63084C51FB39F6C00F698BC /* OfferDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084C41FB39F6C00F698BC /* OfferDetailsViewController.swift */; };
 		B63084C71FB3DD3000F698BC /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084C61FB3DD3000F698BC /* DataStore.swift */; };
+		B63084C91FB4F99400F698BC /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084C81FB4F99400F698BC /* AppColors.swift */; };
 		B6AFB9B31FAFA6C200643DEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B21FAFA6C200643DEB /* AppDelegate.swift */; };
 		B6AFB9B51FAFA6C200643DEB /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B41FAFA6C200643DEB /* OffersViewController.swift */; };
 		B6AFB9BB1FAFA6C200643DEB /* IbottaInterview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B91FAFA6C200643DEB /* IbottaInterview.xcdatamodeld */; };
@@ -29,6 +30,7 @@
 		B63084C11FB2937600F698BC /* UIColor+FromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+FromHex.swift"; sourceTree = "<group>"; };
 		B63084C41FB39F6C00F698BC /* OfferDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailsViewController.swift; sourceTree = "<group>"; };
 		B63084C61FB3DD3000F698BC /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		B63084C81FB4F99400F698BC /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		B6AFB9AF1FAFA6C200643DEB /* IbottaInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbottaInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6AFB9B21FAFA6C200643DEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6AFB9B41FAFA6C200643DEB /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				B6AFB9BC1FAFA6C200643DEB /* Assets.xcassets */,
 				B63084BE1FB26FEE00F698BC /* Offers.json */,
 				B63084C61FB3DD3000F698BC /* DataStore.swift */,
+				B63084C81FB4F99400F698BC /* AppColors.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B63084C91FB4F99400F698BC /* AppColors.swift in Sources */,
 				B6AFB9BB1FAFA6C200643DEB /* IbottaInterview.xcdatamodeld in Sources */,
 				B63084C71FB3DD3000F698BC /* DataStore.swift in Sources */,
 				B6AFB9CA1FB24E4600643DEB /* OffersCollectionViewCell.swift in Sources */,

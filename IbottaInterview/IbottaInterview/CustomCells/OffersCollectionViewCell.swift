@@ -45,7 +45,7 @@ class OffersCollectionViewCell: UICollectionViewCell {
     func setupSubviews() {
         //grey view
         greyView = UIView()
-        greyView.backgroundColor = UIColor.fromHex(string: "#EEEEEE")
+        greyView.backgroundColor = AppColors.lightGrey
         greyView.layer.cornerRadius = 5.0
         contentView.addSubview(greyView)
         
@@ -57,13 +57,13 @@ class OffersCollectionViewCell: UICollectionViewCell {
         //name label
         nameLabel = UILabel()
         nameLabel.font = UIFont(name: "AvenirNext-Regular", size: 11.0)
-        nameLabel.textColor = UIColor.fromHex(string: "#4A4A4A")
+        nameLabel.textColor = AppColors.textGrey
         contentView.addSubview(nameLabel)
         
         //value label
         valueLabel = UILabel()
         valueLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 12.0)
-        valueLabel.textColor = UIColor.fromHex(string: "#4A4A4A")
+        valueLabel.textColor = AppColors.textGrey
         contentView.addSubview(valueLabel)
         
         //favorited image view
