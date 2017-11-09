@@ -84,16 +84,6 @@ class OffersCollectionViewCell: UICollectionViewCell {
         favoritedImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            //grey view
-            greyView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            greyView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            greyView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            greyView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.75),
-            //product image view
-            productImageView.leadingAnchor.constraint(equalTo: greyView.leadingAnchor, constant: 6.0),
-            productImageView.trailingAnchor.constraint(equalTo: greyView.trailingAnchor, constant: -6.0),
-            productImageView.topAnchor.constraint(equalTo: greyView.topAnchor, constant: 6.0),
-            productImageView.bottomAnchor.constraint(equalTo: greyView.bottomAnchor, constant: -6.0),
             //name label
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
@@ -102,6 +92,16 @@ class OffersCollectionViewCell: UICollectionViewCell {
             valueLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             valueLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             valueLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -3.0),
+            //grey view
+            greyView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            greyView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            greyView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            greyView.bottomAnchor.constraint(equalTo: valueLabel.topAnchor, constant: -8.0),
+            //product image view
+            productImageView.leadingAnchor.constraint(equalTo: greyView.leadingAnchor, constant: 6.0),
+            productImageView.trailingAnchor.constraint(equalTo: greyView.trailingAnchor, constant: -6.0),
+            productImageView.topAnchor.constraint(equalTo: greyView.topAnchor, constant: 6.0),
+            productImageView.bottomAnchor.constraint(equalTo: greyView.bottomAnchor, constant: -6.0),
             //favorited image view
             favoritedImageView.centerYAnchor.constraint(equalTo: valueLabel.centerYAnchor),
             favoritedImageView.heightAnchor.constraint(equalTo: valueLabel.heightAnchor),

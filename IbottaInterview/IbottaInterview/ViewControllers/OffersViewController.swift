@@ -41,12 +41,14 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func setupSubviews() {
+        //collection view
         offersCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         offersCollectionView.backgroundColor = UIColor.white
         offersCollectionView.register(OffersCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseID)
         offersCollectionView.delegate = self
         offersCollectionView.dataSource = self
         view.addSubview(offersCollectionView)
+        
         setupConstraints()
     }
     
@@ -56,6 +58,7 @@ class OffersViewController: UIViewController, UICollectionViewDataSource, UIColl
         let safeArea = view.safeAreaLayoutGuide
         
         NSLayoutConstraint.activate([
+            //collection view
             offersCollectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: sideMarginSpacing),
             offersCollectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -sideMarginSpacing),
             offersCollectionView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: lineSpacing),
