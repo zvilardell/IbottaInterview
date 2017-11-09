@@ -37,8 +37,8 @@ class OffersCollectionViewCell: UICollectionViewCell {
             //load image asynchronously from url
         	productImageView.sd_setImage(with: url, completed: nil)
         } else {
-            //no image
-            productImageView.image = nil
+            //no image for offer, display placeholder
+            productImageView.image = UIImage(named: "ibotta_logo")
         }
     }
     

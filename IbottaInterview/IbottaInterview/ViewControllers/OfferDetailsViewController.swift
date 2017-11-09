@@ -30,6 +30,11 @@ class OfferDetailsViewController: UIViewController {
         view.backgroundColor = UIColor.white
         setupSubviews()
     }
+    
+    override func viewDidLayoutSubviews() {
+        //ensure that termsTextView begins with its content scrolled to top
+        termsTextView.setContentOffset(.zero, animated: false)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,9 +46,11 @@ class OfferDetailsViewController: UIViewController {
         productImageView = UIImageView()
         productImageView.contentMode = .scaleAspectFit
         if let url = URL(string: offer.imageURL) {
+            //load image asynchronously from url
         	productImageView.sd_setImage(with: url, completed: nil)
         } else {
-            productImageView.image = nil
+            //no image for offer, display placeholder
+            productImageView.image = UIImage(named: "ibotta_logo")
         }
         view.addSubview(productImageView)
         
