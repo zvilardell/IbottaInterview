@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    class func fromHex(string: String) -> UIColor {
+    class func fromHex(string: String) -> UIColor? {
         var red:   CGFloat = 0.0
         var green: CGFloat = 0.0
         var blue:  CGFloat = 0.0
@@ -37,9 +37,11 @@ extension UIColor {
                 alpha = CGFloat(hexValue & 0x000000FF) / 255.0
             } else {
                 print("Hex string must contain 6 or 8 digits")
+                return nil
             }
         } else {
             print("Could not scan hex string")
+            return nil
         }
         
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)

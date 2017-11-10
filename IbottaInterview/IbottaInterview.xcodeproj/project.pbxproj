@@ -13,6 +13,7 @@
 		B63084C51FB39F6C00F698BC /* OfferDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084C41FB39F6C00F698BC /* OfferDetailsViewController.swift */; };
 		B63084C71FB3DD3000F698BC /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084C61FB3DD3000F698BC /* DataStore.swift */; };
 		B63084C91FB4F99400F698BC /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084C81FB4F99400F698BC /* AppColors.swift */; };
+		B63084D11FB5198E00F698BC /* IbottaInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63084D01FB5198E00F698BC /* IbottaInterviewTests.swift */; };
 		B6AFB9B31FAFA6C200643DEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B21FAFA6C200643DEB /* AppDelegate.swift */; };
 		B6AFB9B51FAFA6C200643DEB /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B41FAFA6C200643DEB /* OffersViewController.swift */; };
 		B6AFB9BB1FAFA6C200643DEB /* IbottaInterview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9B91FAFA6C200643DEB /* IbottaInterview.xcdatamodeld */; };
@@ -21,6 +22,16 @@
 		B6AFB9CA1FB24E4600643DEB /* OffersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFB9C91FB24E4600643DEB /* OffersCollectionViewCell.swift */; };
 		FB5E22AA31F8DB0AF7D32219 /* Pods_IbottaInterview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C38167E3D0E9C9FB8AD2C06 /* Pods_IbottaInterview.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B63084D31FB5198E00F698BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6AFB9A71FAFA6C200643DEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6AFB9AE1FAFA6C200643DEB;
+			remoteInfo = IbottaInterview;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		59BB4D843C92A146A3CA7B0C /* Pods-IbottaInterview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IbottaInterview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IbottaInterview/Pods-IbottaInterview.debug.xcconfig"; sourceTree = "<group>"; };
@@ -31,6 +42,9 @@
 		B63084C41FB39F6C00F698BC /* OfferDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailsViewController.swift; sourceTree = "<group>"; };
 		B63084C61FB3DD3000F698BC /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		B63084C81FB4F99400F698BC /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		B63084CE1FB5198E00F698BC /* IbottaInterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IbottaInterviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B63084D01FB5198E00F698BC /* IbottaInterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IbottaInterviewTests.swift; sourceTree = "<group>"; };
+		B63084D21FB5198E00F698BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6AFB9AF1FAFA6C200643DEB /* IbottaInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbottaInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6AFB9B21FAFA6C200643DEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6AFB9B41FAFA6C200643DEB /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +57,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B63084CB1FB5198E00F698BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6AFB9AC1FAFA6C200643DEB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,10 +144,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B63084CF1FB5198E00F698BC /* IbottaInterviewTests */ = {
+			isa = PBXGroup;
+			children = (
+				B63084D01FB5198E00F698BC /* IbottaInterviewTests.swift */,
+				B63084D21FB5198E00F698BC /* Info.plist */,
+			);
+			path = IbottaInterviewTests;
+			sourceTree = "<group>";
+		};
 		B6AFB9A61FAFA6C200643DEB = {
 			isa = PBXGroup;
 			children = (
 				B6AFB9B11FAFA6C200643DEB /* IbottaInterview */,
+				B63084CF1FB5198E00F698BC /* IbottaInterviewTests */,
 				B6AFB9B01FAFA6C200643DEB /* Products */,
 				2D545470BD60AF918D403D5C /* Pods */,
 				B0E659403B9F6C0B15EFC06E /* Frameworks */,
@@ -137,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				B6AFB9AF1FAFA6C200643DEB /* IbottaInterview.app */,
+				B63084CE1FB5198E00F698BC /* IbottaInterviewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +192,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B63084CD1FB5198E00F698BC /* IbottaInterviewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B63084D51FB5198E00F698BC /* Build configuration list for PBXNativeTarget "IbottaInterviewTests" */;
+			buildPhases = (
+				B63084CA1FB5198E00F698BC /* Sources */,
+				B63084CB1FB5198E00F698BC /* Frameworks */,
+				B63084CC1FB5198E00F698BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B63084D41FB5198E00F698BC /* PBXTargetDependency */,
+			);
+			name = IbottaInterviewTests;
+			productName = IbottaInterviewTests;
+			productReference = B63084CE1FB5198E00F698BC /* IbottaInterviewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B6AFB9AE1FAFA6C200643DEB /* IbottaInterview */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6AFB9C41FAFA6C200643DEB /* Build configuration list for PBXNativeTarget "IbottaInterview" */;
@@ -190,6 +240,11 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = zvilardell;
 				TargetAttributes = {
+					B63084CD1FB5198E00F698BC = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B6AFB9AE1FAFA6C200643DEB;
+					};
 					B6AFB9AE1FAFA6C200643DEB = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -210,11 +265,19 @@
 			projectRoot = "";
 			targets = (
 				B6AFB9AE1FAFA6C200643DEB /* IbottaInterview */,
+				B63084CD1FB5198E00F698BC /* IbottaInterviewTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B63084CC1FB5198E00F698BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6AFB9AD1FAFA6C200643DEB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,6 +339,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B63084CA1FB5198E00F698BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B63084D11FB5198E00F698BC /* IbottaInterviewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6AFB9AB1FAFA6C200643DEB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +365,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B63084D41FB5198E00F698BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6AFB9AE1FAFA6C200643DEB /* IbottaInterview */;
+			targetProxy = B63084D31FB5198E00F698BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		B6AFB9BE1FAFA6C200643DEB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -306,6 +385,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B63084D61FB5198E00F698BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EFG6682TTT;
+				INFOPLIST_FILE = IbottaInterviewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zvilardell.IbottaInterviewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IbottaInterview.app/IbottaInterview";
+			};
+			name = Debug;
+		};
+		B63084D71FB5198E00F698BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EFG6682TTT;
+				INFOPLIST_FILE = IbottaInterviewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zvilardell.IbottaInterviewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IbottaInterview.app/IbottaInterview";
+			};
+			name = Release;
+		};
 		B6AFB9C21FAFA6C200643DEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -450,6 +561,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B63084D51FB5198E00F698BC /* Build configuration list for PBXNativeTarget "IbottaInterviewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B63084D61FB5198E00F698BC /* Debug */,
+				B63084D71FB5198E00F698BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B6AFB9AA1FAFA6C200643DEB /* Build configuration list for PBXProject "IbottaInterview" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

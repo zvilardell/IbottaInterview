@@ -10,6 +10,6 @@ import UIKit
 
 class AppColors {
     //define custom app-wide colors for easy access
-    static let textGrey = UIColor.fromHex(string: "#4A4A4A")
-    static let lightGrey = UIColor.fromHex(string: "#EEEEEE")
+    static let textGrey = UIColor.fromHex(string: "#4A4A4A")!
+    static let lightGrey = UIColor.fromHex(string: "#EEEEEE")!
 }
