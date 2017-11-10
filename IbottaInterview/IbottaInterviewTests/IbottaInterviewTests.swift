@@ -32,7 +32,7 @@ class IbottaInterviewTests: XCTestCase {
         //test blue UIColor from hex string
         XCTAssertEqual(UIColor.fromHex(string: "#0000FF"), UIColor.blue, "Blue UIColor objects do not match")
         //test incorrect hex code formatting (fromHex returns nil)
-        XCTAssertEqual(UIColor.fromHex(string: "#FDA8"), nil)
+        XCTAssertNil(UIColor.fromHex(string: "#FDA8"))
     }
     
 }
